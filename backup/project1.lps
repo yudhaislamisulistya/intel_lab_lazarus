@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="11">
+      <Unit0>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4"/>
+        <CursorPos X="19" Y="4"/>
+        <UsageCount Value="90"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="unit1.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="38" Y="18"/>
+        <UsageCount Value="90"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="unitmain.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitMain"/>
+        <TopLine Value="109"/>
+        <CursorPos X="29" Y="117"/>
+        <UsageCount Value="86"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="unitdatabarang.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form2"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitDataBarang"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="25" Y="7"/>
+        <UsageCount Value="83"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="about.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormAbout"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="About"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="50" Y="9"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="unitdatakategori.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormDataKategori"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitDataKategori"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="48"/>
+        <CursorPos X="58" Y="63"/>
+        <UsageCount Value="36"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="6471"/>
+        <CursorPos Y="6480"/>
+        <UsageCount Value="4"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3541"/>
+        <CursorPos Y="3550"/>
+        <UsageCount Value="9"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="C:\lazarus\lcl\include\customform.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2318"/>
+        <CursorPos Y="2326"/>
+        <UsageCount Value="10"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="C:\lazarus\lcl\grids.pas"/>
+        <UnitName Value="Grids"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="9892"/>
+        <CursorPos Y="9902"/>
+        <UsageCount Value="6"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="..\..\..\Downloads\Compressed\bgracontrols-master\bgracontrols-master\dtthemedclock.pas"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit10>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="34" Column="39" TopLine="19"/>
+      </Position1>
+      <Position2>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="33" Column="39" TopLine="18"/>
+      </Position2>
+      <Position3>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="30" Column="23" TopLine="14"/>
+      </Position3>
+      <Position4>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="31" Column="23" TopLine="14"/>
+      </Position4>
+      <Position5>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="33" Column="23" TopLine="15"/>
+      </Position5>
+      <Position6>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="34" Column="23" TopLine="15"/>
+      </Position6>
+      <Position7>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="35" Column="23" TopLine="15"/>
+      </Position7>
+      <Position8>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="36" Column="23" TopLine="15"/>
+      </Position8>
+      <Position9>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="38" Column="23" TopLine="16"/>
+      </Position9>
+      <Position10>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="21" Column="35" TopLine="18"/>
+      </Position10>
+      <Position11>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="22" Column="35" TopLine="19"/>
+      </Position11>
+      <Position12>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="21" Column="35" TopLine="18"/>
+      </Position12>
+      <Position13>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="22" Column="35" TopLine="19"/>
+      </Position13>
+      <Position14>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="21" Column="35" TopLine="18"/>
+      </Position14>
+      <Position15>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="22" Column="35" TopLine="18"/>
+      </Position15>
+      <Position16>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="51" Column="16" TopLine="32"/>
+      </Position16>
+      <Position17>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="107" Column="70" TopLine="97"/>
+      </Position17>
+      <Position18>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="134" Column="13" TopLine="113"/>
+      </Position18>
+      <Position19>
+        <Filename Value="unitmain.pas"/>
+        <Caret Line="118" Column="20" TopLine="113"/>
+      </Position19>
+      <Position20>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="51" Column="16" TopLine="32"/>
+      </Position20>
+      <Position21>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="52" Column="16" TopLine="33"/>
+      </Position21>
+      <Position22>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="51" Column="16" TopLine="32"/>
+      </Position22>
+      <Position23>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="52" Column="16" TopLine="33"/>
+      </Position23>
+      <Position24>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="53" Column="16" TopLine="34"/>
+      </Position24>
+      <Position25>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="54" Column="16" TopLine="35"/>
+      </Position25>
+      <Position26>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="55" Column="16" TopLine="36"/>
+      </Position26>
+      <Position27>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="54" Column="16" TopLine="35"/>
+      </Position27>
+      <Position28>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="60" Column="16" TopLine="38"/>
+      </Position28>
+      <Position29>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="55" Column="3" TopLine="39"/>
+      </Position29>
+      <Position30>
+        <Filename Value="unitdatakategori.pas"/>
+        <Caret Line="61" Column="24" TopLine="48"/>
+      </Position30>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
