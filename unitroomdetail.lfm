@@ -1,0 +1,159 @@
+object FormDataRoomDetail: TFormDataRoomDetail
+  Left = 320
+  Height = 465
+  Top = 110
+  Width = 760
+  Caption = 'FormDataRoomDetail'
+  ClientHeight = 465
+  ClientWidth = 760
+  LCLVersion = '2.0.6.0'
+  object Panel1: TPanel
+    Left = -8
+    Height = 64
+    Top = -8
+    Width = 784
+    ClientHeight = 64
+    ClientWidth = 784
+    Color = 11882815
+    ParentColor = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 40
+      Height = 18
+      Top = 24
+      Width = 41
+      Caption = 'Home'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Montserrat SemiBold'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object LTitle: TLabel
+      Left = 112
+      Height = 18
+      Top = 24
+      Width = 79
+      Caption = 'Data Room'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Montserrat ExtraBold'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Image2: TImage
+      Left = 88
+      Height = 15
+      Top = 27
+      Width = 15
+      Picture.Data = {
+        1754506F727461626C654E6574776F726B477261706869634F02000089504E47
+        0D0A1A0A0000000D49484452000000400000004008040000000060B955000000
+        0467414D410000B18F0BFC6105000000206348524D00007A26000080840000FA
+        00000080E8000075300000EA6000003A98000017709CBA513C00000002624B47
+        440000AA8D2332000000097048597300000EC400000EC401952B0E1B00000007
+        74494D4507E406050A3B15A56778A30000011D4944415468DEED97BD4A034114
+        466F22090AD6167692C6CE903C429E40F0A7D056F01DACEC7D071F4142022622
+        88CF6029217D88A41335CAB15264D9991471EE287C5F39B3BBE7DC3B7761D76C
+        41D8E28A1923CEA92FBA36416832E52BF7ACE7C4FB2BB0C184626E59F313B8A0
+        2C7E0ADC407A856A646F1C58EF58CFA50B6CF34C283EE3C83EF3A082CF2CB0C7
+        5BEE2E48410A52908214CA15E652908214A4F0D7140E220A43AACB1396533875
+        10881E443F7CD76F366725B8F3E151FF31EFC12338C98BEF271F420EA3EFC0AA
+        F0C20B2FBCF0C20B2FBCF0FF187F14F9D4BC4E8FDFE13563F5665C66ACDECC8C
+        3B0F7CEC97E1A1747560BB951787FACDD8E42953F3BF15DA05058FD12B28B47E
+        28F8E3CDCC68D065C62367D4523CFF13EE4EA42ABEA129950000002574455874
+        646174653A63726561746500323032302D30362D30355431303A35393A32312B
+        30303A30301F06DAC00000002574455874646174653A6D6F6469667900323032
+        302D30362D30355431303A35393A32312B30303A30306E5B627C000000197445
+        5874536F667477617265007777772E696E6B73636170652E6F72679BEE3C1A00
+        00000049454E44AE426082
+      }
+      Stretch = True
+    end
+  end
+  object StringGrid1: TStringGrid
+    Left = 8
+    Height = 320
+    Top = 112
+    Width = 744
+    AlternateColor = 16250871
+    AutoFillColumns = True
+    ColCount = 8
+    Columns = <    
+      item
+        Title.Caption = 'ID'
+        Width = 106
+      end    
+      item
+        Title.Caption = 'Ruangan'
+        Width = 106
+      end    
+      item
+        Title.Caption = 'Kategori'
+        Width = 106
+      end    
+      item
+        Title.Caption = 'Detail'
+        Width = 106
+      end    
+      item
+        Title.Caption = 'Tanggal'
+        Width = 106
+      end    
+      item
+        Title.Caption = 'Tanggal Buat'
+        Width = 106
+      end    
+      item
+        Title.Caption = 'Tanggal Ubah'
+        Width = 107
+      end>
+    Flat = True
+    RowCount = 1
+    TabOrder = 1
+    ColWidths = (
+      0
+      106
+      106
+      106
+      106
+      106
+      106
+      107
+    )
+  end
+  object MySQL56Connection1: TMySQL56Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'lazarus_intel'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    UserName = 'root'
+    HostName = 'localhost'
+    SkipLibraryVersionCheck = False
+    left = 720
+    top = 16
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = MySQL56Connection1
+    Transaction = SQLTransaction1
+    Params = <>
+    left = 688
+    top = 16
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MySQL56Connection1
+    left = 656
+    top = 16
+  end
+end

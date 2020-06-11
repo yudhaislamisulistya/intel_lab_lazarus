@@ -31,9 +31,9 @@ implementation
 
 procedure TForm2.Button1Click(Sender: TObject);
 begin
-  FreeAndNil(FormMain);
-  FormMain:=TFormMain.Create(Application);
-  FormMain.Show;
+  FreeAndNil(Form2);
+  Form2:=TForm2.Create(Application);
+  Form2.Show;
 end;
 
 end.

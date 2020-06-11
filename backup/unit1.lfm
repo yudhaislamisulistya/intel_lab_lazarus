@@ -1,11 +1,11 @@
-object Form1: TForm1
-  Left = 106
-  Height = 721
-  Top = 115
-  Width = 1264
+object FormLogin: TFormLogin
+  Left = 93
+  Height = 585
+  Top = 33
+  Width = 1083
   Caption = 'Login - INTEL LAB'
-  ClientHeight = 721
-  ClientWidth = 1264
+  ClientHeight = 585
+  ClientWidth = 1083
   Icon.Data = {
     BE1000000000010001002020000001002000A810000016000000280000002000
     0000400000000100200000000000001000006400000064000000000000000000
@@ -143,15 +143,13 @@ object Form1: TForm1
     0000000000000000000000000000000000000000000000000000000000000000
     0000
   }
-  OnCreate = FormCreate
   LCLVersion = '2.0.6.0'
   object Image1: TImage
     Cursor = crHandPoint
     Left = 0
-    Height = 721
+    Height = 584
     Top = 0
-    Width = 1264
-    OnClick = Image1Click
+    Width = 1080
     Picture.Data = {
       1754506F727461626C654E6574776F726B47726170686963ED4A0A0089504E47
       0D0A1A0A0000000D494844520000138800000BB808060000000DD352CF000000
@@ -21238,10 +21236,10 @@ object Form1: TForm1
     Stretch = True
   end
   object EUsername: TEdit
-    Left = 896
+    Left = 760
     Height = 24
-    Top = 250
-    Width = 224
+    Top = 200
+    Width = 192
     AutoSize = False
     AutoSelect = False
     BorderStyle = bsNone
@@ -21257,9 +21255,9 @@ object Form1: TForm1
     TabOrder = 0
   end
   object Image2: TImage
-    Left = 944
+    Left = 800
     Height = 114
-    Top = 56
+    Top = 24
     Width = 114
     Picture.Data = {
       1754506F727461626C654E6574776F726B47726170686963B125010089504E47
@@ -23617,14 +23615,15 @@ object Form1: TForm1
     Stretch = True
   end
   object EPassword: TEdit
-    Left = 896
-    Height = 24
-    Top = 304
-    Width = 224
+    Left = 760
+    Height = 20
+    Top = 248
+    Width = 192
     AutoSize = False
     AutoSelect = False
     BorderStyle = bsNone
     Color = 10851359
+    EchoMode = emPassword
     Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -19
@@ -23633,13 +23632,14 @@ object Form1: TForm1
     Font.Quality = fqDraft
     Font.Style = [fsBold]
     ParentFont = False
+    PasswordChar = '*'
     TabOrder = 1
   end
   object Label1: TLabel
     Cursor = crHandPoint
-    Left = 936
+    Left = 792
     Height = 24
-    Top = 360
+    Top = 288
     Width = 136
     AutoSize = False
     ParentColor = False

@@ -1,12 +1,12 @@
 object FormMain: TFormMain
   Cursor = crHandPoint
-  Left = 276
-  Height = 653
-  Top = 16
+  Left = 213
+  Height = 659
+  Top = 25
   Width = 801
   Caption = 'INTEL LAB - Dashboard'
-  ClientHeight = 633
-  ClientWidth = 801
+  ClientHeight = 0
+  ClientWidth = 0
   Color = 16250871
   Icon.Data = {
     BE1000000000010001002020000001002000A810000016000000280000002000
@@ -1389,26 +1389,31 @@ object FormMain: TFormMain
     end
     object MenuItem2: TMenuItem
       Caption = 'Data'
-      object MenuItem7: TMenuItem
-        Caption = 'Barang'
+      object MenuItem24: TMenuItem
+        Caption = 'Ruangan'
+        OnClick = MenuItem24Click
       end
       object MenuItem20: TMenuItem
         Caption = 'Kategori'
+        OnClick = MenuItem20Click
       end
       object MenuItem21: TMenuItem
         Caption = 'Item'
+        OnClick = MenuItem21Click
       end
       object MenuItem22: TMenuItem
         Caption = 'Label'
       end
       object MenuItem23: TMenuItem
         Caption = 'History'
+        OnClick = MenuItem23Click
       end
     end
     object MenuItem3: TMenuItem
       Caption = 'Laboratorium'
       object MenuItem8: TMenuItem
         Caption = 'RPL'
+        OnClick = MenuItem8Click
       end
       object MenuItem9: TMenuItem
         Caption = 'Jaringan Komputer'
@@ -1450,12 +1455,12 @@ object FormMain: TFormMain
     end
   end
   object SQLTransaction1: TSQLTransaction
-    Active = False
+    Active = True
     Database = MySQL56Connection1
     left = 64
   end
   object MySQL56Connection1: TMySQL56Connection
-    Connected = False
+    Connected = True
     LoginPrompt = False
     DatabaseName = 'lazarus_intel'
     KeepConnection = False
@@ -1484,7 +1489,7 @@ object FormMain: TFormMain
     left = 72
   end
   object SQLTransaction2: TSQLTransaction
-    Active = False
+    Active = True
     Database = MySQL56Connection1
     left = 24
   end

@@ -9,16 +9,14 @@ uses
 
 type
 
-  { TForm1 }
+  { TFormLogin }
 
-  TForm1 = class(TForm)
+  TFormLogin = class(TForm)
     EUsername: TEdit;
     EPassword: TEdit;
     Image1: TImage;
     Image2: TImage;
     Label1: TLabel;
-    procedure FormCreate(Sender: TObject);
-    procedure Image1Click(Sender: TObject);
     procedure Label1Click(Sender: TObject);
   private
 
@@ -27,15 +25,15 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FormLogin: TFormLogin;
 
 implementation
 
 {$R *.lfm}
 
-{ TForm1 }
+{ TFormLogin }
 
-procedure TForm1.Label1Click(Sender: TObject);
+procedure TFormLogin.Label1Click(Sender: TObject);
 var
   username, password: String;
 begin
@@ -48,7 +46,7 @@ begin
           begin
             FormMain := TFormMain.Create(Application);
             FormMain.Show;
-            Form1.Hide;
+            FormLogin.Hide;
           end
        else
            begin
@@ -60,17 +58,6 @@ begin
        MessageDlg('Account Incorrect', 'Status Login', mtError, [mbOK], 0, mbOK)
       end;
 end;
-
-procedure TForm1.FormCreate(Sender: TObject);
-begin
-  Form1.BorderIcons:= Form1.BorderIcons - [biMaximize];
-end;
-
-procedure TForm1.Image1Click(Sender: TObject);
-begin
-
-end;
-
 
 
 end.

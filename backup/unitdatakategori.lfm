@@ -1,7 +1,7 @@
 object FormDataKategori: TFormDataKategori
-  Left = 292
+  Left = 475
   Height = 465
-  Top = 140
+  Top = 200
   Width = 750
   Caption = 'Data Kategori'
   ClientHeight = 465
@@ -85,9 +85,19 @@ object FormDataKategori: TFormDataKategori
     Left = 88
     Height = 24
     Top = 64
-    Width = 200
+    Width = 320
     AutoSize = False
+    BorderSpacing.Left = 20
+    BorderSpacing.Around = 10
+    BorderStyle = bsNone
     Color = clNone
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
     TabOrder = 1
   end
   object Label3: TLabel
@@ -110,9 +120,18 @@ object FormDataKategori: TFormDataKategori
     Left = 88
     Height = 24
     Top = 104
-    Width = 200
+    Width = 320
     AutoSize = False
+    BorderSpacing.Around = 5
+    BorderStyle = bsNone
     Color = clNone
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
     TabOrder = 2
   end
   object Label4: TLabel
@@ -131,70 +150,76 @@ object FormDataKategori: TFormDataKategori
     ParentColor = False
     ParentFont = False
   end
-  object SGDataKetegori: TStringGrid
+  object BTNSubmit: TButton
+    Cursor = crHandPoint
+    Left = 248
+    Height = 25
+    Top = 136
+    Width = 75
+    Caption = 'Kirim'
+    Color = clBackground
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = BTNSubmitClick
+    ParentFont = False
+    TabOrder = 3
+  end
+  object BTNReset: TButton
+    Cursor = crHandPoint
+    Left = 333
+    Height = 25
+    Top = 136
+    Width = 75
+    Caption = 'Reset'
+    OnClick = BTNResetClick
+    TabOrder = 4
+  end
+  object DBGrid1: TDBGrid
     Left = 32
-    Height = 280
-    Top = 168
+    Height = 268
+    Top = 176
     Width = 688
     AutoFillColumns = True
-    Color = clDefault
-    ColCount = 6
-    Columns = <    
-      item
-        Title.Caption = 'Nomor'
-        Width = 137
-      end    
-      item
-        Title.Caption = 'Kode'
-        Width = 137
-      end    
-      item
-        Title.Caption = 'Nama'
-        Width = 137
-      end    
-      item
-        Title.Caption = 'Tanggal Buat'
-        Width = 137
-      end    
-      item
-        Title.Caption = 'Tanggal Ubah'
-        Width = 139
-      end>
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    FixedCols = 0
     Flat = True
-    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRelaxedRowSelect, goSmoothScroll, goHeaderHotTracking, goHeaderPushedLook]
-    TabOrder = 3
-    ColWidths = (
-      0
-      137
-      137
-      137
-      137
-      139
-    )
-    Cells = (
-      5
-      1
-      0
-      'KODE'
-      2
-      0
-      'NOMOR'
-      3
-      0
-      'NAMA'
-      4
-      0
-      'TANGGAL BUAT'
-      5
-      0
-      'TANGGAL UBAH'
-    )
+    Options = [dgEditing, dgTitles, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    PopupMenu = PopupMenu1
+    Scrollbars = ssVertical
+    TabOrder = 5
+    OnCellClick = DBGrid1CellClick
+  end
+  object BTNUbah: TButton
+    Cursor = crHandPoint
+    Left = 160
+    Height = 25
+    Top = 136
+    Width = 75
+    Caption = 'Ubah'
+    Color = clBackground
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = BTNUbahClick
+    ParentFont = False
+    TabOrder = 6
   end
   object Image1: TImage
-    Left = 688
+    Cursor = crHandPoint
+    Left = 664
     Height = 32
-    Top = 128
-    Width = 32
+    Top = 136
+    Width = 34
+    OnClick = Image1Click
     Picture.Data = {
       1754506F727461626C654E6574776F726B477261706869630406000089504E47
       0D0A1A0A0000000D4948445200000040000000400806000000AA6971DE000000
@@ -248,30 +273,111 @@ object FormDataKategori: TFormDataKategori
     }
     Stretch = True
   end
-  object BTNSubmit: TButton
-    Left = 136
-    Height = 25
-    Top = 136
-    Width = 75
-    Caption = 'Submit'
-    Color = clBackground
-    Font.CharSet = ANSI_CHARSET
-    Font.Color = clWhite
-    Font.Height = -12
-    Font.Name = 'Segoe UI'
-    Font.Pitch = fpVariable
-    Font.Quality = fqDraft
-    OnClick = BTNSubmitClick
-    ParentFont = False
-    TabOrder = 4
+  object SQLTransaction1: TSQLTransaction
+    Active = True
+    Database = MySQL56Connection1
+    left = 656
+    top = 8
   end
-  object BTNReset: TButton
-    Left = 216
-    Height = 25
-    Top = 136
-    Width = 75
-    Caption = 'Reset'
-    OnClick = BTNResetClick
-    TabOrder = 5
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = MySQL56Connection1
+    Transaction = SQLTransaction2
+    Params = <>
+    left = 688
+    top = 8
+  end
+  object MySQL56Connection1: TMySQL56Connection
+    Connected = True
+    LoginPrompt = False
+    DatabaseName = 'lazarus_intel'
+    KeepConnection = False
+    Transaction = SQLTransaction2
+    UserName = 'root'
+    HostName = 'localhost'
+    SkipLibraryVersionCheck = False
+    left = 720
+    top = 8
+  end
+  object SQLQuery2: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <    
+      item
+        Name = 'id_category'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'code'
+        DataType = ftString
+        Precision = -1
+        Size = 4
+      end    
+      item
+        Name = 'name'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'created_at'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'updated_at'
+        DataType = ftDateTime
+        Precision = -1
+      end>
+    Active = True
+    Database = MySQL56Connection1
+    Transaction = SQLTransaction2
+    SQL.Strings = (
+      'SELECT * FROM tbl_categories'
+    )
+    Params = <>
+    left = 656
+    top = 48
+  end
+  object SQLTransaction2: TSQLTransaction
+    Active = True
+    Database = MySQL56Connection1
+    left = 688
+    top = 48
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery2
+    left = 720
+    top = 48
+  end
+  object PopupMenu1: TPopupMenu
+    left = 624
+    top = 8
+    object MenuItem1: TMenuItem
+      Caption = 'Hapus'
+      OnClick = MenuItem1Click
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    Filter = 'Excel|*.xls'
+    left = 77
+    top = 293
+  end
+  object FPSExport1: TFPSExport
+    Dataset = SQLQuery2
+    ExportFields = <>
+    FormatSettings.IntegerFormat = '%d'
+    FormatSettings.DecimalSeparator = ','
+    FormatSettings.CurrencySymbol = 'Rp'
+    FormatSettings.CurrencyDigits = 0
+    FormatSettings.BooleanTrue = 'True'
+    FormatSettings.BooleanFalse = 'False'
+    FormatSettings.DateFormat = 'dd/MM/yyyy'
+    FormatSettings.TimeFormat = 'hh:nn'
+    FormatSettings.DateTimeFormat = 'dd/MM/yyyy hh:nn'
+    FormatSettings.ExportFormat = efXLS
+    FormatSettings.SheetName = 'Sheet'
+    left = 120
+    top = 296
   end
 end

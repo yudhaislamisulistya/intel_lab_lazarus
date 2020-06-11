@@ -1,7 +1,7 @@
-object Form1: TForm1
-  Left = 95
+object FormLogin: TFormLogin
+  Left = 93
   Height = 585
-  Top = 47
+  Top = 33
   Width = 1083
   Caption = 'Login - INTEL LAB'
   ClientHeight = 585
@@ -143,7 +143,6 @@ object Form1: TForm1
     0000000000000000000000000000000000000000000000000000000000000000
     0000
   }
-  OnCreate = FormCreate
   LCLVersion = '2.0.6.0'
   object Image1: TImage
     Cursor = crHandPoint
@@ -151,7 +150,6 @@ object Form1: TForm1
     Height = 584
     Top = 0
     Width = 1080
-    OnClick = Image1Click
     Picture.Data = {
       1754506F727461626C654E6574776F726B47726170686963ED4A0A0089504E47
       0D0A1A0A0000000D494844520000138800000BB808060000000DD352CF000000
@@ -23625,6 +23623,7 @@ object Form1: TForm1
     AutoSelect = False
     BorderStyle = bsNone
     Color = 10851359
+    EchoMode = emPassword
     Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -19
@@ -23633,13 +23632,14 @@ object Form1: TForm1
     Font.Quality = fqDraft
     Font.Style = [fsBold]
     ParentFont = False
+    PasswordChar = '*'
     TabOrder = 1
   end
   object Label1: TLabel
     Cursor = crHandPoint
-    Left = 936
+    Left = 792
     Height = 24
-    Top = 360
+    Top = 288
     Width = 136
     AutoSize = False
     ParentColor = False

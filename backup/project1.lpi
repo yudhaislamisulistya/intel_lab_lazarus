@@ -25,18 +25,27 @@
       <FormatVersion Value="2"/>
       <Modes Count="0"/>
     </RunParams>
-    <RequiredPackages Count="3">
+    <RequiredPackages Count="6">
       <Item1>
-        <PackageName Value="TAChartLazarusPkg"/>
+        <PackageName Value="laz_fpspreadsheetexport_visual"/>
       </Item1>
       <Item2>
-        <PackageName Value="FCL"/>
+        <PackageName Value="lrSpreadSheetExport"/>
       </Item2>
       <Item3>
-        <PackageName Value="LCL"/>
+        <PackageName Value="laz_fpspreadsheet"/>
       </Item3>
+      <Item4>
+        <PackageName Value="TAChartLazarusPkg"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="FCL"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="LCL"/>
+      </Item6>
     </RequiredPackages>
-    <Units Count="6">
+    <Units Count="9">
       <Unit0>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -44,7 +53,7 @@
       <Unit1>
         <Filename Value="unit1.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="FormLogin"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit1"/>
@@ -58,29 +67,52 @@
         <UnitName Value="unitMain"/>
       </Unit2>
       <Unit3>
-        <Filename Value="unitdatabarang.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form2"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="unitDataBarang"/>
-      </Unit3>
-      <Unit4>
         <Filename Value="about.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormAbout"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="About"/>
-      </Unit4>
-      <Unit5>
+      </Unit3>
+      <Unit4>
         <Filename Value="unitdatakategori.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="FormDataKategori"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="unitDataKategori"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="unitdataroom.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormDataRoom"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitDataRoom"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="unitdataitem.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormDataItem"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitDataItem"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="unitdatahistoryexport.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormDataHistoryExport"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitDataHistoryExport"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="unitroomdetail.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormDataRoomDetail"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="unitRoomDetail"/>
+      </Unit8>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -102,7 +134,7 @@
     </Linking>
   </CompilerOptions>
   <Debugging>
-    <Exceptions Count="3">
+    <Exceptions Count="5">
       <Item1>
         <Name Value="EAbort"/>
       </Item1>
@@ -112,6 +144,12 @@
       <Item3>
         <Name Value="EFOpenError"/>
       </Item3>
+      <Item4>
+        <Name Value="ESQLDatabaseError"/>
+      </Item4>
+      <Item5>
+        <Name Value="EGridException"/>
+      </Item5>
     </Exceptions>
   </Debugging>
 </CONFIG>
