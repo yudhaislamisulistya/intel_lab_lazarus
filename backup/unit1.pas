@@ -60,6 +60,11 @@ begin
       end;
 end;
 
+procedure TFormLogin.FormCreate(Sender: TObject);
+begin
+  BorderIcons := BorderIcons - [biMaximize]
+end;
+
 
 end.
 

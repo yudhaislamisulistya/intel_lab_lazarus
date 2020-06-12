@@ -7,8 +7,8 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, tachartlazaruspkg, Unit1, unitMain, About,
-  unitDataKategori, unitDataRoom, unitDataItem, unitDataHistoryExport, unitRoomDetail;
+  Forms, tachartlazaruspkg, Unit1, unitMain, About, unitDataKategori,
+  unitDataRoom, unitDataItem, unitDataHistoryExport, unitRoomDetail, unitDataLabel;
 
 {$R *.res}
 
@@ -24,6 +24,7 @@ begin
   Application.CreateForm(TFormDataItem, FormDataItem);
   Application.CreateForm(TFormDataHistoryExport, FormDataHistoryExport);
   Application.CreateForm(TFormDataRoomDetail, FormDataRoomDetail);
+  Application.CreateForm(TFormDataLabel, FormDataLabel);
   Application.Run;
 end.
 

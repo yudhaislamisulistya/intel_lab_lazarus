@@ -17,6 +17,7 @@ type
     Image1: TImage;
     Image2: TImage;
     Label1: TLabel;
+    procedure FormCreate(Sender: TObject);
     procedure Label1Click(Sender: TObject);
   private
 
@@ -57,6 +58,11 @@ begin
       begin
        MessageDlg('Account Incorrect', 'Status Login', mtError, [mbOK], 0, mbOK)
       end;
+end;
+
+procedure TFormLogin.FormCreate(Sender: TObject);
+begin
+  BorderIcons := BorderIcons - [biMaximize];
 end;
 
 

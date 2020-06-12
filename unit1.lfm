@@ -4,8 +4,8 @@ object FormLogin: TFormLogin
   Top = 33
   Width = 1083
   Caption = 'Login - INTEL LAB'
-  ClientHeight = 585
-  ClientWidth = 1083
+  ClientHeight = 0
+  ClientWidth = 0
   Icon.Data = {
     BE1000000000010001002020000001002000A810000016000000280000002000
     0000400000000100200000000000001000006400000064000000000000000000
@@ -143,6 +143,7 @@ object FormLogin: TFormLogin
     0000000000000000000000000000000000000000000000000000000000000000
     0000
   }
+  OnCreate = FormCreate
   LCLVersion = '2.0.6.0'
   object Image1: TImage
     Cursor = crHandPoint

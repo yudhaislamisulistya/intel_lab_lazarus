@@ -63,6 +63,7 @@ uses
 
 procedure TFormDataRoom.FormCreate(Sender: TObject);
 begin
+  BorderIcons := BorderIcons - [biMaximize]
   DBGrid1.Columns[0].Title.Caption:='Nomor';
   DBGrid1.Columns[1].Title.Caption:='Kode';
   DBGrid1.Columns[2].Title.Caption:='Nama';
@@ -78,16 +79,16 @@ begin
        FPSExport1.Execute;
        try
         begin
-        SQLQuery1.Close;
-        SQLQuery1.SQL.Clear;
-        SQLQuery1.SQL.Text:='INSERT INTO tbl_history_export (detail_name, file) VALUES (:detail_name, :file)';
-        SQLQuery1.Params.ParamByName('detail_name').AsString:='Data Ruangan';
-        SQLQuery1.Params.ParamByName('file').AsString:=SaveDialog1.FileName;
-        SQLQuery1.ExecSQL;
+        SQLQuery2.Close;
+        SQLQuery2.SQL.Clear;
+        SQLQuery2.SQL.Text:='INSERT INTO tbl_history_export (detail_name, file) VALUES (:detail_name, :file)';
+        SQLQuery2.Params.ParamByName('detail_name').AsString:='Data Ruangan';
+        SQLQuery2.Params.ParamByName('file').AsString:=SaveDialog1.FileName;
+        SQLQuery2.ExecSQL;
         SQLTransaction1.Commit;
         ENama.Text:='';
-        SQLQuery2.Open;
-        SQLQuery2.Refresh;
+        SQLQuery1.Open;
+        SQLQuery1.Refresh;
         end;
       except
         on E : Exception do

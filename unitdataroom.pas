@@ -63,6 +63,7 @@ uses
 
 procedure TFormDataRoom.FormCreate(Sender: TObject);
 begin
+  BorderIcons := BorderIcons - [biMaximize];
   DBGrid1.Columns[0].Title.Caption:='Nomor';
   DBGrid1.Columns[1].Title.Caption:='Kode';
   DBGrid1.Columns[2].Title.Caption:='Nama';

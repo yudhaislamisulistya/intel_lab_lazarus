@@ -5,8 +5,8 @@ object FormMain: TFormMain
   Top = 25
   Width = 801
   Caption = 'INTEL LAB - Dashboard'
-  ClientHeight = 0
-  ClientWidth = 0
+  ClientHeight = 639
+  ClientWidth = 801
   Color = 16250871
   Icon.Data = {
     BE1000000000010001002020000001002000A810000016000000280000002000
@@ -1403,6 +1403,7 @@ object FormMain: TFormMain
       end
       object MenuItem22: TMenuItem
         Caption = 'Label'
+        OnClick = MenuItem22Click
       end
       object MenuItem23: TMenuItem
         Caption = 'History'
@@ -1417,33 +1418,43 @@ object FormMain: TFormMain
       end
       object MenuItem9: TMenuItem
         Caption = 'Jaringan Komputer'
+        OnClick = MenuItem9Click
       end
       object MenuItem10: TMenuItem
         Caption = 'Multimedia'
+        OnClick = MenuItem10Click
       end
       object MenuItem11: TMenuItem
         Caption = 'Informatika Industri'
+        OnClick = MenuItem11Click
       end
       object MenuItem12: TMenuItem
         Caption = 'Dasar'
+        OnClick = MenuItem12Click
       end
       object MenuItem13: TMenuItem
         Caption = 'Robotika'
+        OnClick = MenuItem13Click
       end
       object MenuItem14: TMenuItem
         Caption = 'Kepala Lab 1'
+        OnClick = MenuItem14Click
       end
       object MenuItem15: TMenuItem
         Caption = 'Kepala Lab 2'
+        OnClick = MenuItem15Click
       end
       object MenuItem16: TMenuItem
         Caption = 'Riset 1'
+        OnClick = MenuItem16Click
       end
       object MenuItem17: TMenuItem
         Caption = 'Riset 2'
+        OnClick = MenuItem17Click
       end
       object MenuItem18: TMenuItem
         Caption = 'Asisten'
+        OnClick = MenuItem18Click
       end
     end
     object MenuItem4: TMenuItem
@@ -1471,12 +1482,36 @@ object FormMain: TFormMain
     left = 48
   end
   object SQLQueryDataLab: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
     FieldDefs = <    
       item
-        Name = 'count(*)'
-        DataType = ftLargeint
+        Name = 'id_room'
+        DataType = ftAutoInc
+        Precision = -1
+      end    
+      item
+        Name = 'code'
+        DataType = ftString
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'name'
+        DataType = ftString
+        Precision = -1
+        Size = 50
+      end    
+      item
+        Name = 'created_at'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'updated_at'
+        DataType = ftDateTime
         Precision = -1
       end>
+    Active = True
     Database = MySQL56Connection1
     Transaction = SQLTransaction1
     SQL.Strings = (
@@ -1494,6 +1529,7 @@ object FormMain: TFormMain
     left = 24
   end
   object SQLQueryDataCategory: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
     FieldDefs = <    
       item
         Name = 'id_category'
@@ -1522,6 +1558,7 @@ object FormMain: TFormMain
         DataType = ftDateTime
         Precision = -1
       end>
+    Active = True
     Database = MySQL56Connection1
     Transaction = SQLTransaction1
     SQL.Strings = (

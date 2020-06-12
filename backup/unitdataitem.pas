@@ -40,7 +40,9 @@ type
     SQLDataKategori: TSQLQuery;
     SQLDataItems: TSQLQuery;
     SQLQuery1: TSQLQuery;
+    SQLQueryTotalOrderBy: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
+    procedure BTNResetClick(Sender: TObject);
     procedure BTNSubmitClick(Sender: TObject);
     procedure BTNUbahClick(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
@@ -83,6 +85,7 @@ end;
 
 procedure TFormDataItem.FormCreate(Sender: TObject);
 begin
+  BorderIcons := BorderIcons - [biMaximize]
   reloadData(SQLDataRuangan, CBRuangan);
   reloadData(SQLDataKategori, CBBarang);
   DBGrid1.Columns[0].Title.Caption:='Nomor';
@@ -156,13 +159,20 @@ procedure TFormDataItem.BTNSubmitClick(Sender: TObject);
 begin
   try
     begin
+    SQLQueryTotalOrderBy.Close;
+    SQLQueryTotalOrderBy.SQL.Clear;
+    SQLQueryTotalOrderBy.SQL.Text:='SELECT COUNT(id_items) FROM tbl_items WHERE code_room = :code_room AND code_category = :code_category';
+    SQLQueryTotalOrderBy.Params.ParamByName('code_room').AsString:=CBRuangan.Text;
+    SQLQueryTotalOrderBy.Params.ParamByName('code_category').AsString:=CBBarang.Text;
+    SQLQueryTotalOrderBy.Open;
     SQLQuery1.Close;
     SQLQuery1.SQL.Clear;
-    SQLQuery1.SQL.Text:='INSERT INTO tbl_items (code_room, code_category, detail_name, date) VALUES (:code_room, :code_category, :detail_name, :date)';
+    SQLQuery1.SQL.Text:='INSERT INTO tbl_items (code_room, code_category, detail_name, date, order_by) VALUES (:code_room, :code_category, :detail_name, :date, :order_by)';
     SQLQuery1.Params.ParamByName('code_room').AsString:=CBRuangan.Text;
     SQLQuery1.Params.ParamByName('code_category').AsString:=CBBarang.Text;
     SQLQuery1.Params.ParamByName('detail_name').AsString:=ENama.Text;
     SQLQuery1.Params.ParamByName('date').AsString:=METanggal.Text;
+    SQLQuery1.Params.ParamByName('order_by').AsInteger:=SQLQueryTotalOrderBy.Fields[0].AsInteger + 1;
     SQLQuery1.ExecSQL;
     SQLTransaction1.Commit;
     ENama.Text:='';
@@ -174,6 +184,13 @@ begin
     on E : Exception do
       ShowMessage(E.ClassName+' error raised, with message : '+E.Message);
   end;
+end;
+
+procedure TFormDataItem.BTNResetClick(Sender: TObject);
+begin
+  ENama.Clear;
+  METanggal.Clear;
+  METanggal.Enabled:=True;
 end;
 
 procedure TFormDataItem.BTNUbahClick(Sender: TObject);

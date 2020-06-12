@@ -52,15 +52,26 @@ type
     MenuItem9: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure Image3Click(Sender: TObject);
+    procedure MenuItem10Click(Sender: TObject);
+    procedure MenuItem11Click(Sender: TObject);
+    procedure MenuItem12Click(Sender: TObject);
+    procedure MenuItem13Click(Sender: TObject);
+    procedure MenuItem14Click(Sender: TObject);
+    procedure MenuItem15Click(Sender: TObject);
+    procedure MenuItem16Click(Sender: TObject);
+    procedure MenuItem17Click(Sender: TObject);
+    procedure MenuItem18Click(Sender: TObject);
     procedure MenuItem19Click(Sender: TObject);
     procedure MenuItem20Click(Sender: TObject);
     procedure MenuItem21Click(Sender: TObject);
+    procedure MenuItem22Click(Sender: TObject);
     procedure MenuItem23Click(Sender: TObject);
     procedure MenuItem24Click(Sender: TObject);
     procedure MenuItem5Click(Sender: TObject);
     procedure MenuItem6Click(Sender: TObject);
     procedure MenuItem7Click(Sender: TObject);
     procedure MenuItem8Click(Sender: TObject);
+    procedure MenuItem9Click(Sender: TObject);
   private
 
   public
@@ -71,37 +82,39 @@ var
   FormMain: TFormMain;
 
 implementation
-uses Unit1, unitDataKategori, unitDataRoom, unitDataItem, unitDataHistoryExport, unitRoomDetail;
+uses Unit1, unitDataKategori, unitDataRoom, unitDataItem, unitDataHistoryExport, unitRoomDetail, unitDataLabel;
 
 {$R *.lfm}
 
 { TFormMain }
 
 procedure reloadData(sql : TSQLQuery; grid : TStringGrid; total: TLabel);
-var i,j,fc : Integer;
+var i,j,fc,k : Integer;
 begin
   sql.Open;
   total.Caption:=IntToStr(sql.RecordCount);
   grid.FixedCols:=0;
-  grid.RowCount:=sql.RecordCount + 1;
+  grid.RowCount:=7;
   fc:=sql.FieldCount;
   i:=1;
   sql.First;
-  while sql.EOF = False do
-  begin
-    grid.Row:=i;
-    for j := 0 to fc-1 do
+  for k:=0 to 5 do
     begin
-      grid.Cells[j, i] := sql.Fields[j].AsString;
+      grid.Row:=i;
+      for j := 0 to fc-1 do
+      begin
+        grid.Cells[j, i] := sql.Fields[j].AsString;
+      end;
+      sql.Next;
+      Inc(i);
     end;
-    sql.Next;
-    Inc(i);
-  end;
+  sql.Close;
 end;
 
-procedure dataLab(sql : TSQLQuery; grid : TStringGrid; sqltext: String);
+procedure dataLab(sql: TSQLQuery; grid : TStringGrid; sqltext: String);
 var i,j,fc : Integer;
 begin
+  sql.Clear;
   sql.SQL.Text:=sqltext;
   sql.Open;
   grid.FixedCols:=0;
@@ -119,12 +132,14 @@ begin
     sql.Next;
     Inc(i);
   end;
+  sql.Close;
 end;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
-  reloadData(SQLQueryDataLab, SGDataLab, TotalDataLab);
+  BorderIcons := BorderIcons - [biMaximize];
   reloadData(SQLQueryDataCategory, SGDataKategori, TotalDataKategori);
+  reloadData(SQLQueryDataLab, SGDataLab, TotalDataLab);
 end;
 
 
@@ -134,6 +149,10 @@ begin
   ShellExecute(Handle, nil, PChar(Application.ExeName), nil, nil, 1);
   Application.Terminate;
 end;
+
+
+
+
 
 procedure TFormMain.MenuItem19Click(Sender: TObject);
 begin
@@ -148,6 +167,11 @@ end;
 procedure TFormMain.MenuItem21Click(Sender: TObject);
 begin
   FormDataItem.Show;
+end;
+
+procedure TFormMain.MenuItem22Click(Sender: TObject);
+begin
+  FormDataLabel.Show;
 end;
 
 procedure TFormMain.MenuItem23Click(Sender: TObject);
@@ -177,10 +201,79 @@ begin
 end;
 
 procedure TFormMain.MenuItem8Click(Sender: TObject);
-var i,j,fc : Integer;
 begin
   FormDataRoomDetail.LTitle.Caption:='Data Ruangan RPL';
-  dataLab(FormDataRoomDetail.SQLQuery1, FormDataRoomDetail.StringGrid1, 'SELECT id_items, code_room, code_category, detail_name, date, created_at, updated_at FROM tbl_items WHERE code_room = "RPL"');
+  dataLab(FormDataRoomDetail.SQLQuery1, FormDataRoomDetail.StringGrid1, 'SELECT tbl_items.id_items, tbl_rooms.name, tbl_categories.name, tbl_items.detail_name, tbl_items.date, tbl_items.created_at, tbl_items.updated_at FROM tbl_items, tbl_rooms, tbl_categories WHERE tbl_items.code_room = "RPL" AND tbl_items.code_room = tbl_rooms.code AND tbl_categories.code = tbl_items.code_category');
+  FormDataRoomDetail.ShowModal;
+end;
+
+procedure TFormMain.MenuItem9Click(Sender: TObject);
+begin
+  FormDataRoomDetail.LTitle.Caption:='Data Ruangan Jaringan Komputer';
+  dataLab(FormDataRoomDetail.SQLQuery1, FormDataRoomDetail.StringGrid1, 'SELECT tbl_items.id_items, tbl_rooms.name, tbl_categories.name, tbl_items.detail_name, tbl_items.date, tbl_items.created_at, tbl_items.updated_at FROM tbl_items, tbl_rooms, tbl_categories WHERE tbl_items.code_room = "JAR" AND tbl_items.code_room = tbl_rooms.code AND tbl_categories.code = tbl_items.code_category');
+  FormDataRoomDetail.ShowModal;
+end;
+
+procedure TFormMain.MenuItem10Click(Sender: TObject);
+begin
+  FormDataRoomDetail.LTitle.Caption:='Data Ruangan Multimedia';
+  dataLab(FormDataRoomDetail.SQLQuery1, FormDataRoomDetail.StringGrid1, 'SELECT tbl_items.id_items, tbl_rooms.name, tbl_categories.name, tbl_items.detail_name, tbl_items.date, tbl_items.created_at, tbl_items.updated_at FROM tbl_items, tbl_rooms, tbl_categories WHERE tbl_items.code_room = "MUL" AND tbl_items.code_room = tbl_rooms.code AND tbl_categories.code = tbl_items.code_category');
+  FormDataRoomDetail.ShowModal;
+end;
+
+procedure TFormMain.MenuItem11Click(Sender: TObject);
+begin
+  FormDataRoomDetail.LTitle.Caption:='Data Ruangan Informatika Industri';
+  dataLab(FormDataRoomDetail.SQLQuery1, FormDataRoomDetail.StringGrid1, 'SELECT tbl_items.id_items, tbl_rooms.name, tbl_categories.name, tbl_items.detail_name, tbl_items.date, tbl_items.created_at, tbl_items.updated_at FROM tbl_items, tbl_rooms, tbl_categories WHERE tbl_items.code_room = "IND" AND tbl_items.code_room = tbl_rooms.code AND tbl_categories.code = tbl_items.code_category');
+  FormDataRoomDetail.ShowModal;
+end;
+
+procedure TFormMain.MenuItem12Click(Sender: TObject);
+begin
+  FormDataRoomDetail.LTitle.Caption:='Data Ruangan Dasar';
+  dataLab(FormDataRoomDetail.SQLQuery1, FormDataRoomDetail.StringGrid1, 'SELECT tbl_items.id_items, tbl_rooms.name, tbl_categories.name, tbl_items.detail_name, tbl_items.date, tbl_items.created_at, tbl_items.updated_at FROM tbl_items, tbl_rooms, tbl_categories WHERE tbl_items.code_room = "DSR" AND tbl_items.code_room = tbl_rooms.code AND tbl_categories.code = tbl_items.code_category');
+  FormDataRoomDetail.ShowModal;
+end;
+
+procedure TFormMain.MenuItem13Click(Sender: TObject);
+begin
+  FormDataRoomDetail.LTitle.Caption:='Data Ruangan Robotika';
+  dataLab(FormDataRoomDetail.SQLQuery1, FormDataRoomDetail.StringGrid1, 'SELECT tbl_items.id_items, tbl_rooms.name, tbl_categories.name, tbl_items.detail_name, tbl_items.date, tbl_items.created_at, tbl_items.updated_at FROM tbl_items, tbl_rooms, tbl_categories WHERE tbl_items.code_room = "RBT" AND tbl_items.code_room = tbl_rooms.code AND tbl_categories.code = tbl_items.code_category');
+  FormDataRoomDetail.ShowModal;
+end;
+
+procedure TFormMain.MenuItem14Click(Sender: TObject);
+begin
+  FormDataRoomDetail.LTitle.Caption:='Data Ruangan Kepala Lab 1';
+  dataLab(FormDataRoomDetail.SQLQuery1, FormDataRoomDetail.StringGrid1, 'SELECT tbl_items.id_items, tbl_rooms.name, tbl_categories.name, tbl_items.detail_name, tbl_items.date, tbl_items.created_at, tbl_items.updated_at FROM tbl_items, tbl_rooms, tbl_categories WHERE tbl_items.code_room = "KL1" AND tbl_items.code_room = tbl_rooms.code AND tbl_categories.code = tbl_items.code_category');
+  FormDataRoomDetail.ShowModal;
+end;
+
+procedure TFormMain.MenuItem15Click(Sender: TObject);
+begin
+  FormDataRoomDetail.LTitle.Caption:='Data Ruangan Kepala Lab 2';
+  dataLab(FormDataRoomDetail.SQLQuery1, FormDataRoomDetail.StringGrid1, 'SELECT tbl_items.id_items, tbl_rooms.name, tbl_categories.name, tbl_items.detail_name, tbl_items.date, tbl_items.created_at, tbl_items.updated_at FROM tbl_items, tbl_rooms, tbl_categories WHERE tbl_items.code_room = "KL2" AND tbl_items.code_room = tbl_rooms.code AND tbl_categories.code = tbl_items.code_category');
+  FormDataRoomDetail.ShowModal;
+end;
+
+procedure TFormMain.MenuItem16Click(Sender: TObject);
+begin
+  FormDataRoomDetail.LTitle.Caption:='Data Ruangan Riset 1';
+  dataLab(FormDataRoomDetail.SQLQuery1, FormDataRoomDetail.StringGrid1, 'SELECT tbl_items.id_items, tbl_rooms.name, tbl_categories.name, tbl_items.detail_name, tbl_items.date, tbl_items.created_at, tbl_items.updated_at FROM tbl_items, tbl_rooms, tbl_categories WHERE tbl_items.code_room = "RS1" AND tbl_items.code_room = tbl_rooms.code AND tbl_categories.code = tbl_items.code_category');
+  FormDataRoomDetail.ShowModal;
+end;
+
+procedure TFormMain.MenuItem17Click(Sender: TObject);
+begin
+  FormDataRoomDetail.LTitle.Caption:='Data Ruangan Riset 2';
+  dataLab(FormDataRoomDetail.SQLQuery1, FormDataRoomDetail.StringGrid1, 'SELECT tbl_items.id_items, tbl_rooms.name, tbl_categories.name, tbl_items.detail_name, tbl_items.date, tbl_items.created_at, tbl_items.updated_at FROM tbl_items, tbl_rooms, tbl_categories WHERE tbl_items.code_room = "RS2" AND tbl_items.code_room = tbl_rooms.code AND tbl_categories.code = tbl_items.code_category');
+  FormDataRoomDetail.ShowModal;
+end;
+
+procedure TFormMain.MenuItem18Click(Sender: TObject);
+begin
+  FormDataRoomDetail.LTitle.Caption:='Data Ruangan Asisten';
+  dataLab(FormDataRoomDetail.SQLQuery1, FormDataRoomDetail.StringGrid1, 'SELECT tbl_items.id_items, tbl_rooms.name, tbl_categories.name, tbl_items.detail_name, tbl_items.date, tbl_items.created_at, tbl_items.updated_at FROM tbl_items, tbl_rooms, tbl_categories WHERE tbl_items.code_room = "AST" AND tbl_items.code_room = tbl_rooms.code AND tbl_categories.code = tbl_items.code_category');
   FormDataRoomDetail.ShowModal;
 end;
 

@@ -22,6 +22,7 @@ type
     Panel1: TPanel;
     SQLQuery1: TSQLQuery;
     SQLTransaction1: TSQLTransaction;
+    procedure FormCreate(Sender: TObject);
     procedure Label1Click(Sender: TObject);
   private
 
@@ -44,6 +45,11 @@ procedure TFormDataHistoryExport.Label1Click(Sender: TObject);
 begin
   FormDataHistoryExport.Hide;
   FormMain.Show;
+end;
+
+procedure TFormDataHistoryExport.FormCreate(Sender: TObject);
+begin
+  BorderIcons := BorderIcons - [biMaximize];
 end;
 
 end.
