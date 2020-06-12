@@ -39,4 +39,4 @@
 ![enter image description here](https://github.com/yudhaislamisulistya/intel_lab_lazarus/blob/master/gif/export.gif?raw=true)
 
 ## Full Demo
-[![asciicast](https://github.com/yudhaislamisulistya/intel_lab_lazarus/blob/master/screenshot/Form%20Login.png?raw=true)](https://streamable.com/8r1mbd)
+[![asciicast](https://github.com/yudhaislamisulistya/intel_lab_lazarus/blob/master/screenshot/Form%20Login.png?raw=true)](https://drive.google.com/file/d/1kWSrWodCumyZNBKCn00ruRGjVZAUTUMB/view?usp=sharing)
